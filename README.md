@@ -5,7 +5,8 @@
 
 1. Fork a copy of the project and clone it down to your computer 
 2. Run `npm install`
-3. Start up or download postman: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+3. Run `npm start` to start the server
+4. Start up or download postman: https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
 
 ###Tasks:
 
