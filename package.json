@@ -1,0 +1,26 @@
+{
+  "name": "database_review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmordell/database_review.git"
+  },
+  "author": "Lee Mordell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmordell/database_review/issues"
+  },
+  "homepage": "https://github.com/lmordell/database_review#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.0",
+    "sequelize": "^3.26.0"
+  }
+}
