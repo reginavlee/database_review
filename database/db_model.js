@@ -39,7 +39,8 @@ router.post('/api/postCookie', (req,res) => {
 //In postman, make sure you're making a POST
 //request and your localhost address points to localhost:3000
 //Under the address bar, click on 'Body', then raw to pass 
-//in an example object. Make sure your
+//in an example object. Make sure you set it as 
+//'JSON application/JSON' instead of 'text'
 router.post('/api/addUser', (req, res) => {
 
 })
