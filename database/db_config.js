@@ -6,6 +6,9 @@ const Sequelize = require('sequelize')
 
 //Pass in the url to the place where you are hosting your database
 const db = new Sequelize('')
+
+
+
 //Define a table called 'cookies'
 const Cookies = db.define('cookies', {
 	//Define a collumn in the table

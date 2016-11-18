@@ -4,8 +4,19 @@ const express = require('express')
 const router = express.Router()
 const db = require('./db_config')
 
+
+
+/***************
+TASK:
+
+Below, complete 2 routes: '/api/addUser', which adds a single
+user to the DB and '/api/getAllUsers', which returns 
+all the users that exist in the database. Refer to the postCookie
+code below for an example. Also, refer to the
+sequelize docs for more information.
+****************/
+
 router.post('/api/postCookie', (req,res) => {
-	console.log('req body', req.body)
 	//Use the create method on the table
 	//Make sure your columns match the ones you
 	//defined in your schema
