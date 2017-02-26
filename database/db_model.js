@@ -4,8 +4,6 @@ const express = require('express')
 const router = express.Router()
 const db = require('./db_config')
 
-
-
 /***************
 TASK:
 
@@ -36,29 +34,48 @@ router.post('/api/postCookie', (req,res) => {
 
 })
 
+
 //In postman, make sure you're making a POST
 //request and your localhost address points to localhost:3000
 //Under the address bar, click on 'Body', then raw to pass 
 //in an example object. Make sure you set it as 
 //'JSON application/JSON' instead of 'text'
-router.post('/api/addUser', (req, res) => {
 
+router.post('/api/addUser', (req,res) => {
+	db.Users.create({
+		name: req.body.name,
+		age: req.body.age,
+		birthday: req.body.birthday	
+	})
+	.then(function(user) {
+		res.send(user);
+	})
+	.catch(function(error) {
+		res.send(error)
+	})
 })
 
 //In postman, make sure you're making a GET request
-router.get('/api/getAllUsers', (req, res) => {
-
+router.get('/api/getAllUsers', (req,res) => {
+	db.Users.findAll()
+		.then(function(users) {
+			res.send(users)
+		})
+		.catch(function(error) {
+			res.send(error)
+		})
 })
-
-
-
-
-
 
 //EXTRA CREDIT! Get one user from the database
-router.get('api/getOneUser', (req,res) => {
-
+// /: --> whatever comes after the : is req.params
+router.get('/api/getOneUser/:id', (req,res) => {
+	db.Users.find({
+		where: {id: req.params.id}
+	})
+	.then(user => res.send(user))
+	.catch(error => res.send(error))
 })
+
 
 
 module.exports = router

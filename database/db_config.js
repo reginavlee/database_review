@@ -5,7 +5,7 @@ const Sequelize = require('sequelize')
 
 
 //Pass in the url to the place where you are hosting your database
-const db = new Sequelize('')
+const db = new Sequelize('postgres://zdolzzrx:6zN6IHl4JdydeWgPw9xux1xHxcDo1AP3@babar.elephantsql.com:5432/zdolzzrx')
 
 
 
@@ -32,25 +32,33 @@ row. Don't forget to sync your table below and add it to module.exports
 ****************/
 
 
-
-
-
-
-
-
+// table names are Capitalized
+const Users = db.define('users', {
+	name: {
+		type: Sequelize.STRING(30)
+	},
+	age: {
+		type: Sequelize.INTEGER()
+	},
+	birthday: {
+		type: Sequelize.DATEONLY()
+	}
+})
 
 
 //This code is necesarry for creating your table in the DB
 //It syncs the particular table to the table. You should 
 //do this  
 Cookies.sync()
+// sends to database
+Users.sync();
 
 //In the code below, we pass in { force: true }. Here, sync drops 
 //all data from that particular table and starts it fresh
 //You need to drop the table in order to make changes
 //to the schema
 
-//Cookies.sync({ force: true })
+// Users.sync({ force: true })
 
 
 //This code connects your application to the database
@@ -65,4 +73,7 @@ db.authenticate()
     });
 
 //Pass in your user table in module.exports
-module.exports = { Cookies: Cookies };
+module.exports = { 
+	Cookies: Cookies,
+	Users: Users
+};
